@@ -1,7 +1,21 @@
 var http = require('http');
 var handle = require('./handle');
 
-var s = require('./name');
+var events = require('events');
+var emitter = new events.EventEmitter();
+
+// require('console-log-hello-world');
+
+// emitter.on('say12', say);
+//
+//
+// function say() {
+//     console.log("I'm saying...");
+// }
+//
+// emitter.emit('say12');
+
+// var s = require('./name');
 
 // function handle(request, response){
 //     response.writeHead(200, {
@@ -18,7 +32,7 @@ var s = require('./name');
 //     response.end();
 // }
 
-console.log(s.name());
+// console.log(s.name());
 
 // var server = http.createServer(handle);
 var server = http.createServer(handle.fn);
